@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <title>Faq</title>
+   <title>
+    <% if (title) { %>
+      <%= title %>
+    <% } else { %> 
+      Faq - The best page for questions for begginers
+    <% }  %> 
+      
+   </title>
 </head>
 <body>
    <%- include('partials/header') %>
