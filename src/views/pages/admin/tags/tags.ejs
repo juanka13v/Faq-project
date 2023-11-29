@@ -1,0 +1,23 @@
+<h1>All tags</h1>
+
+<% if (!tags || tags.length < 1) { %>
+ <h3>Thera are not tags</h3>
+<% } else { %>
+    <ul>
+        <% tags.forEach(tag => { %>
+            <li>
+                <p>
+                    <a href="/admin/tag/<%= tag._id %>"><%= tag.name %></a>
+                </p> <br>
+                <p><%= tag._id %></p> 
+                <button>
+                    <a href="/admin/tags/edit/<%= tag._id %>">edit tag</a>
+                </button>
+
+                <form action="/admin/tag/<%= tag._id %>?_method=DELETE" method="POST" style="display: inline;">
+                    <button type="submit">Delete</button>
+                  </form>
+            </li>
+        <% }) %>
+    </ul>
+<% } %>

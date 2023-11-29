@@ -1,0 +1,12 @@
+<h2>edit tag</h2>
+
+<form action="/admin/tag/<%= tag._id %>?_method=PUT" method="POST">
+  <label for="name">name:</label>
+  <input type="text" id="name" name="name" required value="<%= tag.name %>"/>
+
+  <label for="color">color</label>
+  <input type="text" id="color" name="color" value="<%= tag.color %>" />
+
+
+  <button type="submit">Guardar Pregunta</button>
+</form>
