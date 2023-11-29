@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const expressLayout = require("express-ejs-layouts");
+const methodOverride = require('method-override');
 const { MONGO_URI, PORT } = require("./config");
 const connectDB = require("./db/connect");
 
@@ -9,13 +10,14 @@ const adminRoute = require("./routes/question.admin.route");
 const errorHandler = require("./middlewares/error.middleware");
 
 // parse json
-app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // config ejs
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(expressLayout);
 app.set("layout", "layout");
+app.use(methodOverride('_method'));
 
 app.use("/admin", adminRoute);
 
