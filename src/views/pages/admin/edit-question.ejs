@@ -1,0 +1,27 @@
+<h1>update <%= question._id %></h1>
+
+
+
+<form action="/admin/question/<%= question._id %>?_method=PUT" method="POST">
+  <label for="question">questions:</label>
+  <input type="text" id="question" name="question" required value="<%= question.question %>" />
+
+  <label for="simple_answer">simple answer:</label>
+  <input type="text" id="simple_answer" name="simple_answer" required value="<%= question.simple_answer %>" />
+
+  <label for="detailed_answer">detailed nswer:</label>
+  <textarea id="detailed_answer" name="detailed_answer" required >
+    <%= question.detailed_answer %>
+  </textarea>
+
+  <label for="tags">Tags (separados por comas):</label>
+  <input type="text" id="tags" name="tags" />
+
+  <label for="language">Lenguaje:</label>
+  <input type="text" id="language" name="language" value="<%= question.lenguaje %>" />
+
+  <label for="code">Código Relacionado:</label>
+  <textarea id="code" name="code"><%= question.code %></textarea>
+
+  <button type="submit">Update questions</button>
+</form>

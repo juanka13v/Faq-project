@@ -1,0 +1,25 @@
+<h1>create</h1>
+
+
+
+<form action="/admin/questions" method="POST">
+  <label for="question">questions:</label>
+  <input type="text" id="question" name="question" required />
+
+  <label for="simple_answer">simple answer:</label>
+  <input type="text" id="simple_answer" name="simple_answer" required />
+
+  <label for="detailed_answer">detailed nswer:</label>
+  <textarea id="detailed_answer" name="detailed_answer" required></textarea>
+
+  <label for="tags">Tags (separados por comas):</label>
+  <input type="text" id="tags" name="tags" />
+
+  <label for="language">Lenguaje:</label>
+  <input type="text" id="language" name="language" />
+
+  <label for="code">Código Relacionado:</label>
+  <textarea id="code" name="code"></textarea>
+
+  <button type="submit">Guardar Pregunta</button>
+</form>
