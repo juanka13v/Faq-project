@@ -12,8 +12,8 @@ const {
 
 router.route("/questions").get(showAllQuestions).post(createQuestion);
 
-router.route("/create").get(showCreateQuestion)
-router.route("/update/:id").get(showUpdateQuestion)
+router.route("/questions/create").get(showCreateQuestion)
+router.route("/questions/update/:id").get(showUpdateQuestion)
 
 router
   .route("/question/:id")
